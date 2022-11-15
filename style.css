@@ -24,6 +24,9 @@ body{
     margin: auto;
     width: 100%;
 }
+section{
+    padding: 64px 0 54px;
+}
 /* Header Style*/
 header{
     position:fixed;
@@ -48,4 +51,12 @@ nav{
     font-size: 1.6rem;
     cursor: pointer;
     color: var(--text-color);
+}
+.section-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.shop{
+    margin-top:2rem ;
 }
