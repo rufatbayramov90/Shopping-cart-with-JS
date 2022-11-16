@@ -56,6 +56,19 @@ nav{
 /*Cart style*/
 .cart{
     position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4 rgb(131, 128, 128);
+}
+.cart-title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 32px;
 }
 .section-title{
     font-size: 1.5rem;
