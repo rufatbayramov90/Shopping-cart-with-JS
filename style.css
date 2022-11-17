@@ -64,6 +64,10 @@ nav{
     padding: 20px;
     background: var(--bg-color);
     box-shadow: -2px 0 4 rgb(131, 128, 128);
+    transition: .3s ease;
+}
+.cart.active{
+    right: 0;
 }
 .cart-title{
     text-align: center;
