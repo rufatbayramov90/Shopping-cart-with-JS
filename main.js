@@ -37,7 +37,19 @@ function ready(){
         var button = addCart[i];
         button.addEventListener('click', addCartClicked)
 }
+//Buy button work
+    document.getElementsByClassName('btn-buy')[0].addEventListener('click',buyButtonClicked);
+
 }
+//Buy button
+    function buyButtonClicked(){
+        alert('Your order is placed')
+        var cartContent = document.getElementsByClassName('cart-content')[0]
+        while(cartContent.hasChildNodes()){
+            cartContent.removeChild(cartContent.firstChild);
+        }
+        updatetotal();
+    }
 
 //Reomve Items from cart
 function removeCartItem(event){
@@ -79,8 +91,8 @@ function addProductToCart(title,price,productImg){
 var cartBoxContent = `
                         <img src="${productImg}" alt="" class="cart-img">
                         <div class="detail-box">
-                            <div class="cart-product-title">Bag</div>
-                            <div class="cart-price">$25.04</div>
+                            <div class="cart-product-title">${title}</div>
+                            <div class="cart-price">${price}</div>
                             <input type="number" value="1" class="cart-quantity">
                         </div>
                         <!--Remove Cart-->
@@ -103,8 +115,9 @@ function updatetotal(){
         var price = parseFloat(priceElement.innerText.replace('$',''))
         var quantity = quantityElement.value;
         total = total + (price * quantity);
+    }
         // If price Contain some Cents Value
         total = Math.round(total * 100) /100;
         document.getElementsByClassName('total-price')[0].innerText = '$' + total;
-    }
+    
 }

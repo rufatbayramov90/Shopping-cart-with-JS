@@ -58,7 +58,7 @@ nav{
 .cart{
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 300px;
     min-height: 100vh;
     padding: 20px;
@@ -196,6 +196,33 @@ nav{
 }
 .add-cart:hover{
     box-shadow: -1px 1px 5px black;
+}
+
+@media(max-width:1000px){
+    .nav{
+        padding: 15px;
+    }
+    section{
+        padding: 3rem 0 2rem;
+    }
+    .container{
+        margin: 0 auto;
+        width:90% ;
+    }
+    .shop{
+        margin-top: 2rem ;
+    }
+}
+@media(max-width:400px){
+    .nav{
+        padding: 11px;
+    }
+    .logo{
+        font-size: 16px;
+    }
+    .cart{
+        width: 320px;
+    }
 }
 
 
