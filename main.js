@@ -66,21 +66,31 @@ function addCartClicked(event){
 }
 function addProductToCart(title,price,productImg){
     var cartShopBox = document.createElement('div');
+    cartShopBox.classList.add('cart-box');
     var cartItems = document.getElementsByClassName('cart-content')[0];
     var cartItemsNames = cartItems.getElementsByClassName('cart-product-title');
     for (var i = 0 ; i < cartItemsNames.length; i++){
-        alert('You have already add to cart')
+        if(cartItemsNames[i].innerText == title){
+        alert('You have already add to cart');
+        return;
     }
 }
+
 var cartBoxContent = `
-                        <img src="/img/wt1.jpg" alt="" class="cart-img">
+                        <img src="${productImg}" alt="" class="cart-img">
                         <div class="detail-box">
                             <div class="cart-product-title">Bag</div>
                             <div class="cart-price">$25.04</div>
                             <input type="number" value="1" class="cart-quantity">
                         </div>
                         <!--Remove Cart-->
-                        <i class='bx bxs-trash-alt cart-remove'></i>`
+                        <i class='bx bxs-trash-alt cart-remove'></i>`;
+cartShopBox.innerHTML = cartBoxContent
+cartItems.append(cartShopBox) 
+cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click',removeCartItem)  ;                   
+cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change',quantityChanged);
+
+}
 //Update total
 function updatetotal(){
     var cartContent = document.getElementsByClassName('cart-content')[0];
