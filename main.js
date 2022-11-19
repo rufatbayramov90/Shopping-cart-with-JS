@@ -6,7 +6,7 @@ cartIcon.onclick = () =>{
     cart.classList.add('active'); 
 }
 // Close Cart
-cartClose.onclick = () =>{
+closeCart.onclick = () => {
     cart.classList.remove('active'); 
 }
 
@@ -19,5 +19,16 @@ if(document.readyState == 'loading'){
 //Making Function
 function ready(){
     //Remove Items From Cart
-    var reomveCartButtons = document.getElementsByClassName('cart-remove')
+    var reomveCartButtons = document.getElementsByClassName('cart-remove');
+    console.log(reomveCartButtons);
+    for (var i = 0; i < reomveCartButtons.length; i++){
+        var button = reomveCartButtons[i];
+        button.addEventListener('click', removeCartItem)
+    }
+}
+
+//Reomve Items from cart
+function removeCartItem(event){
+    var buttonClicked = event.target
+    buttonClicked.parentElement.remove()
 }
